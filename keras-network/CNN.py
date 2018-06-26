@@ -77,7 +77,6 @@ def build_neural_network():
 
 def train_model():
     model.fit(x_train, y_train, batch_size=32, epochs=1)
-    print("--------model-training---------")
 
 
 def model_evaluate():
@@ -85,15 +84,16 @@ def model_evaluate():
     print("loss:", loss, "\naccuracy", accuracy)
 
 
-# 1.get data and data pre-processing
-x_train, y_train, x_test, y_test = data_pre_processing()
+if __name__ == '__main__':
+    # 1.get data and data pre-processing
+    x_train, y_train, x_test, y_test = data_pre_processing()
 
-# 2.build neural network
-model = Sequential()
-build_neural_network()
+    # 2.build neural network
+    model = Sequential()
+    build_neural_network()
 
-# 3.train the model
-train_model()
+    # 3.train the model
+    train_model()
 
-# 4.evaluate the model
-model_evaluate()
+    # 4.evaluate the model
+    model_evaluate()
